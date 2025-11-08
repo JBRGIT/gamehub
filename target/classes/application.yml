@@ -2,12 +2,12 @@ spring:
   application:
     name: GameHub
   datasource:
-    password: password
+    password: postgres
     url: jdbc:postgresql://localhost:5432/gamehub
     username: postgres
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         show_sql: true
