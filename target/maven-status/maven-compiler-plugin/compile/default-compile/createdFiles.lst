@@ -1,0 +1,10 @@
+com\gamehub\gamehub_api\dto\request\GameCreateRequest.class
+com\gamehub\gamehub_api\mapper\GameMapperImpl.class
+com\gamehub\gamehub_api\GamehubApiApplication.class
+com\gamehub\gamehub_api\repository\GameRepository.class
+com\gamehub\gamehub_api\dto\response\GameSummaryResponse.class
+com\gamehub\gamehub_api\entity\Game.class
+com\gamehub\gamehub_api\entity\GameCategory.class
+com\gamehub\gamehub_api\dto\request\GameUpdateRequest.class
+com\gamehub\gamehub_api\dto\response\GameDetailResponse.class
+com\gamehub\gamehub_api\mapper\GameMapper.class
