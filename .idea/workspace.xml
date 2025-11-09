@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda92e41-0b19-481a-ae88-2490b2b52325" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/dto/request/GameUpdateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/dto/request/GameCreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/dto/request/GameCreateRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/dto/response/GameSummaryResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,17 +108,5 @@
       <updated>1762600700839</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/dto/request/GameUpdateRequest.java</url>
-          <line>12</line>
-          <properties field="title" class="com.gamehub.gamehub_api.dto.request.GameUpdateRequest" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
