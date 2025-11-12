@@ -1,13 +1,13 @@
 package com.gamehub.gamehub_api.dto.request;
 
 import com.gamehub.gamehub_api.entity.GameCategory;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.*;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Getter
 public class GameCreateRequest {
     @NotBlank
     @Size(max = 200, message = "Le titre ne peut pas dépasser 200 caractères")

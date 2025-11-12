@@ -14,7 +14,6 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // 🟥 1️⃣ Jeu non trouvé (404)
     @ExceptionHandler(GameNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleGameNotFoundException(GameNotFoundException ex, WebRequest request) {
         ErrorResponse errorResponse = ErrorResponse.builder()
@@ -27,7 +26,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
     }
 
-    // 🟧 2️⃣ Jeu déjà existant (409)
+
     @ExceptionHandler(GameAlreadyExistsException.class)
     public ResponseEntity<ErrorResponse> handleGameAlreadyExistsException(GameAlreadyExistsException ex, WebRequest request) {
         ErrorResponse errorResponse = ErrorResponse.builder()
@@ -40,7 +39,6 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
     }
 
-    // 🟨 3️⃣ Erreurs de validation (400)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex, WebRequest request) {
         Map<String, String> errors = new HashMap<>();
@@ -60,7 +58,6 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 
-    // 🟦 4️⃣ Erreur globale (500)
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGlobalException(Exception ex, WebRequest request) {
         ErrorResponse errorResponse = ErrorResponse.builder()
