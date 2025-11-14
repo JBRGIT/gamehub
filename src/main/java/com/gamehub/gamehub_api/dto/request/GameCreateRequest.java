@@ -12,6 +12,10 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class GameCreateRequest {
+    public void setTitle(String title) {
+        this.title = (title == null ? null : title.trim());
+    }
+
     @NotBlank
     @Size(max = 200, message = "Le titre ne peut pas dépasser 200 caractères")
     private String title;
