@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-11-09T14:42:18+0100",
+    date = "2025-11-14T17:28:51+0100",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.7 (Oracle Corporation)"
 )
 @Component
@@ -24,6 +24,17 @@ public class GameMapperImpl implements GameMapper {
 
         GameDetailResponse gameDetailResponse = new GameDetailResponse();
 
+        gameDetailResponse.setId( game.getId() );
+        gameDetailResponse.setTitle( game.getTitle() );
+        gameDetailResponse.setDescription( game.getDescription() );
+        gameDetailResponse.setReleaseDate( game.getReleaseDate() );
+        gameDetailResponse.setPrice( game.getPrice() );
+        gameDetailResponse.setDeveloper( game.getDeveloper() );
+        gameDetailResponse.setPublisher( game.getPublisher() );
+        gameDetailResponse.setCategory( game.getCategory() );
+        gameDetailResponse.setCoverImageUrl( game.getCoverImageUrl() );
+        gameDetailResponse.setAvailable( game.getAvailable() );
+
         return gameDetailResponse;
     }
 
@@ -34,6 +45,13 @@ public class GameMapperImpl implements GameMapper {
         }
 
         GameSummaryResponse gameSummaryResponse = new GameSummaryResponse();
+
+        gameSummaryResponse.setId( game.getId() );
+        gameSummaryResponse.setTitle( game.getTitle() );
+        gameSummaryResponse.setPrice( game.getPrice() );
+        gameSummaryResponse.setCategory( game.getCategory() );
+        gameSummaryResponse.setCoverImageUrl( game.getCoverImageUrl() );
+        gameSummaryResponse.setAvailable( game.getAvailable() );
 
         return gameSummaryResponse;
     }
@@ -46,6 +64,15 @@ public class GameMapperImpl implements GameMapper {
 
         Game game = new Game();
 
+        game.setTitle( request.getTitle() );
+        game.setDescription( request.getDescription() );
+        game.setReleaseDate( request.getReleaseDate() );
+        game.setPrice( request.getPrice() );
+        game.setDeveloper( request.getDeveloper() );
+        game.setPublisher( request.getPublisher() );
+        game.setCategory( request.getCategory() );
+        game.setCoverImageUrl( request.getCoverImageUrl() );
+
         return game;
     }
 
@@ -53,6 +80,34 @@ public class GameMapperImpl implements GameMapper {
     public void gameUpdateRequestToGame(GameUpdateRequest request, Game game) {
         if ( request == null ) {
             return;
+        }
+
+        if ( request.getTitle() != null ) {
+            game.setTitle( request.getTitle() );
+        }
+        if ( request.getDescription() != null ) {
+            game.setDescription( request.getDescription() );
+        }
+        if ( request.getReleaseDate() != null ) {
+            game.setReleaseDate( request.getReleaseDate() );
+        }
+        if ( request.getPrice() != null ) {
+            game.setPrice( request.getPrice() );
+        }
+        if ( request.getDeveloper() != null ) {
+            game.setDeveloper( request.getDeveloper() );
+        }
+        if ( request.getPublisher() != null ) {
+            game.setPublisher( request.getPublisher() );
+        }
+        if ( request.getCategory() != null ) {
+            game.setCategory( request.getCategory() );
+        }
+        if ( request.getCoverImageUrl() != null ) {
+            game.setCoverImageUrl( request.getCoverImageUrl() );
+        }
+        if ( request.getAvailable() != null ) {
+            game.setAvailable( request.getAvailable() );
         }
     }
 }
