@@ -6,7 +6,7 @@ public enum GameCategory {
     RPG,
     STRATEGY,
     SIMULATION,
-    SPORTS,
+    SPORT,
     PUZZLE,
     HORROR,
     RACING,

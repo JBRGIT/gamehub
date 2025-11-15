@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-11-14T17:28:51+0100",
+    date = "2025-11-15T13:02:37+0100",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.7 (Oracle Corporation)"
 )
 @Component
@@ -62,18 +62,18 @@ public class GameMapperImpl implements GameMapper {
             return null;
         }
 
-        Game game = new Game();
+        Game.GameBuilder game = Game.builder();
 
-        game.setTitle( request.getTitle() );
-        game.setDescription( request.getDescription() );
-        game.setReleaseDate( request.getReleaseDate() );
-        game.setPrice( request.getPrice() );
-        game.setDeveloper( request.getDeveloper() );
-        game.setPublisher( request.getPublisher() );
-        game.setCategory( request.getCategory() );
-        game.setCoverImageUrl( request.getCoverImageUrl() );
+        game.title( request.getTitle() );
+        game.description( request.getDescription() );
+        game.releaseDate( request.getReleaseDate() );
+        game.price( request.getPrice() );
+        game.developer( request.getDeveloper() );
+        game.publisher( request.getPublisher() );
+        game.category( request.getCategory() );
+        game.coverImageUrl( request.getCoverImageUrl() );
 
-        return game;
+        return game.build();
     }
 
     @Override
