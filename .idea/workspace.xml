@@ -5,12 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda92e41-0b19-481a-ae88-2490b2b52325" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/config/OpenAPIConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/mapper/GameMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/mapper/GameMapperImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/gamehub/gamehub_api/mapper/GameMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/gamehub/gamehub_api/mapper/GameMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/config/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/config/DataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/entity/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/service/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/service/GameServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/GamehubApiApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/config/DataLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/config/OpenAPIConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/controller/GameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/dto/request/GameCreateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/dto/request/GameUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/dto/response/GameDetailResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/dto/response/GameSummaryResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/entity/Game$GameBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/entity/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/entity/GameCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/exception/ErrorResponse$ErrorResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/exception/ErrorResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/exception/GameAlreadyExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/exception/GameNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/mapper/GameMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/mapper/GameMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/repository/GameRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/service/GameService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/service/GameServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gamehub-api-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gamehub-api-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/gamehub/gamehub_api/mapper/GameMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.gamehub.gamehub_api.GamehubApiApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.gamehub.gamehub_api.GamehubApiApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/gamehub/gamehub_api/GamehubApiApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +69,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/config/OpenAPIConfig.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -52,22 +90,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GamehubApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.gamehub-api [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.gamehub-api [install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;C:\\Users\\radid\\AppData\\Roaming\\JetBrains\\IdeaIC2025.2\\plugins\\Shell Script\\shellcheck.exe&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;module1&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/radid/OneDrive/Insy2s/formation/Spring Boot/gamehub&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GamehubApiApplication.executor": "Run",
+    "Maven.gamehub-api [clean].executor": "Run",
+    "Maven.gamehub-api [compile].executor": "Run",
+    "Maven.gamehub-api [install].executor": "Run",
+    "Maven.gamehub-api [test].executor": "Run",
+    "Maven.gamehub-api [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "C:\\Users\\radid\\AppData\\Roaming\\JetBrains\\IdeaIC2025.2\\plugins\\Shell Script\\shellcheck.exe",
+    "git-widget-placeholder": "module1",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/radid/OneDrive/Insy2s/formation/Spring Boot/gamehub",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\radid\OneDrive\Insy2s\formation\Spring Boot\gamehub\.idea" />
@@ -121,16 +162,5 @@
       <updated>1762600700839</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/entity/GameCategory.java</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

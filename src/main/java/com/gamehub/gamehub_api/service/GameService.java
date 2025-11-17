@@ -5,13 +5,15 @@ import com.gamehub.gamehub_api.dto.request.GameUpdateRequest;
 import com.gamehub.gamehub_api.dto.response.GameDetailResponse;
 import com.gamehub.gamehub_api.dto.response.GameSummaryResponse;
 import com.gamehub.gamehub_api.entity.GameCategory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
 public interface GameService {
     GameDetailResponse createGame(GameCreateRequest request);
     GameDetailResponse getGameById(Long id);
-    List<GameSummaryResponse> getAllGames();
+    Page<GameSummaryResponse> getAllGames(Pageable pageable);
     List<GameSummaryResponse> getGamesByCategory(GameCategory category);
     List<GameSummaryResponse> getAvailableGames();
     GameDetailResponse updateGame(Long id, GameUpdateRequest request);

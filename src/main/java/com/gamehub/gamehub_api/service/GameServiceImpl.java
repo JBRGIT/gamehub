@@ -12,6 +12,8 @@ import com.gamehub.gamehub_api.mapper.GameMapper;
 import com.gamehub.gamehub_api.repository.GameRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,17 +50,14 @@ public class GameServiceImpl implements GameService {
         return gameMapper.gameToGameDetailResponse(game);
     }
 
+
     @Override
     @Transactional(readOnly = true)
-    public List<GameSummaryResponse> getAllGames() {
-        List<GameSummaryResponse> gameSummaryResponseList = new ArrayList<>();
-        List<Game> games = gameRepository.findAll();
-        for (Game game : games) {
-            GameSummaryResponse gameSummaryResponse = gameMapper.gameToGameSummaryResponse(game);
-            gameSummaryResponseList.add(gameSummaryResponse);
-        }
-        log.info("Récupération de tous les jeux : {} trouvés", gameSummaryResponseList.size());
-        return gameSummaryResponseList;
+    public Page<GameSummaryResponse> getAllGames(Pageable pageable) {
+        Page<Game> games = gameRepository.findAll(pageable);
+        log.info("Récupération de tous les jeux : {} trouvés sur {} pages", games.getTotalElements(), games.getTotalPages());
+        log.info("Cette page {} contient {} jeux", games.getNumber() + 1, games.getNumberOfElements());
+        return games.map(gameMapper::gameToGameSummaryResponse);
     }
 
     @Transactional(readOnly = true)

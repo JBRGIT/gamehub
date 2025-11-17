@@ -36,7 +36,6 @@ public class DataLoader {
                         .publisher("azerty")
                         .category(GameCategory.RPG)
                         .coverImageUrl("https://example.com/witcher.jpg")
-                        .available(true)
                         .build();
 
                 Game g2 = Game.builder()
@@ -48,7 +47,6 @@ public class DataLoader {
                         .publisher("Electronic Arts")
                         .category(GameCategory.SPORT)
                         .coverImageUrl("https://example.com/fifa24.jpg")
-                        .available(true)
                         .build();
 
                 Game g3 = Game.builder()
@@ -72,7 +70,6 @@ public class DataLoader {
                         .publisher("Activision")
                         .category(GameCategory.ACTION)
                         .coverImageUrl("https://example.com/codmw2.jpg")
-                        .available(true)
                         .build();
 
                 Game g5 = Game.builder()

@@ -9,11 +9,13 @@ import com.gamehub.gamehub_api.service.GameService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/games")
@@ -37,21 +39,10 @@ public class GameController {
     }
 
     @GetMapping
-    public ResponseEntity<List<GameSummaryResponse>> getAllGames(@RequestParam(required = false) GameCategory category, @RequestParam(required = false, defaultValue = "false") Boolean availableOnly) {
-        log.info("Requête GET reçue pour récupérer les jeux : category={}, availableOnly={}", category, availableOnly);
-        List<GameSummaryResponse> list;
-        if (category != null) {
-            log.info("Filtrage par catégorie : {}", category);
-            list = gameService.getGamesByCategory(category);
-        } else if (availableOnly) {
-            log.info("Filtrage : uniquement les jeux disponibles");
-            list = gameService.getAvailableGames();
-        } else {
-            log.info("Aucun filtre appliqué : récupération de tous les jeux");
-            list = gameService.getAllGames();
-        }
-
-        return ResponseEntity.ok(list);
+    public ResponseEntity<Page<GameSummaryResponse>> getAllGames(@PageableDefault(size = 1, sort = {"title"}) Pageable pageable) {
+        log.info("Requête GET reçue pour récupérer les jeux");
+        Page<GameSummaryResponse> page = gameService.getAllGames(pageable);
+        return ResponseEntity.ok(page);
     }
 
     @PutMapping("/{id}")

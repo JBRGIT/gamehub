@@ -39,6 +39,7 @@ public class Game {
     private String coverImageUrl ;
     @NotNull
     @Column(nullable = false)
+    @Builder.Default
     private Boolean available = true;
 
 }
