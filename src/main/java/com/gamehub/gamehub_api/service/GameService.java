@@ -8,14 +8,15 @@ import com.gamehub.gamehub_api.entity.GameCategory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
 
 public interface GameService {
     GameDetailResponse createGame(GameCreateRequest request);
     GameDetailResponse getGameById(Long id);
     Page<GameSummaryResponse> getAllGames(Pageable pageable);
-    List<GameSummaryResponse> getGamesByCategory(GameCategory category);
-    List<GameSummaryResponse> getAvailableGames();
+    Page<GameSummaryResponse> getGamesByCategory(GameCategory category, Pageable pageable);
+    Page<GameSummaryResponse> getAvailableGames(Pageable pageable);
+    Page<GameSummaryResponse> getUnAvailableGames(Pageable pageable);
+    Page<GameSummaryResponse> getByCategoryAndAvailable(GameCategory category, Boolean available, Pageable pageable);
     GameDetailResponse updateGame(Long id, GameUpdateRequest request);
     void deleteGame(Long id);
     void markAsUnavailable(Long id);

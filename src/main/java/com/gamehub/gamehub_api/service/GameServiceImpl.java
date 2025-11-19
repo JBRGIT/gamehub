@@ -62,32 +62,39 @@ public class GameServiceImpl implements GameService {
 
     @Transactional(readOnly = true)
     @Override
-    public List<GameSummaryResponse> getGamesByCategory(GameCategory category) {
+    public Page<GameSummaryResponse> getGamesByCategory(GameCategory category, Pageable pageable) {
         log.info("Récupération des jeux de la catégorie : {}", category);
-        List<GameSummaryResponse> gameSummaryResponseList = new ArrayList<>();
-        List<Game> games = gameRepository.findByCategory(category);
-        for (Game game : games) {
-            GameSummaryResponse gameSummaryResponse = gameMapper.gameToGameSummaryResponse(game);
-            gameSummaryResponseList.add(gameSummaryResponse);
-        }
-        log.info("{} jeux trouvés pour la catégorie {}", gameSummaryResponseList.size(), category);
-        return gameSummaryResponseList;
+        Page<Game> gamesPage = gameRepository.findByCategory(category, pageable);
+        log.info("{} jeux de catégorie {}", gamesPage.getTotalElements(), category);
+        return gamesPage.map(gameMapper::gameToGameSummaryResponse);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List<GameSummaryResponse> getAvailableGames() {
+    public Page<GameSummaryResponse> getAvailableGames(Pageable pageable) {
         log.info("Récupération des jeux disponibles...");
-        List<GameSummaryResponse> gameSummaryResponseList = new ArrayList<>();
-        List<Game> games = gameRepository.findByAvailableTrue();
-        for (Game game : games) {
-            GameSummaryResponse gameSummaryResponse = gameMapper.gameToGameSummaryResponse(game);
-            gameSummaryResponseList.add(gameSummaryResponse);
-        }
-        log.info("{} jeux disponibles trouvés", gameSummaryResponseList.size());
-        return gameSummaryResponseList;
-
+        Page<Game> gamesPage = gameRepository.findByAvailableTrue(pageable);
+        log.info("{} jeux disponibles trouvés", gamesPage.getTotalElements());
+        return gamesPage.map(gameMapper::gameToGameSummaryResponse);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<GameSummaryResponse> getUnAvailableGames(Pageable pageable) {
+        log.info("Récupération des jeux indisponibles...");
+        Page<Game> gamesPage = gameRepository.findByAvailableFalse(pageable);
+        log.info("{} jeux indisponibles trouvés", gamesPage.getTotalElements());
+        return gamesPage.map(gameMapper::gameToGameSummaryResponse);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<GameSummaryResponse> getByCategoryAndAvailable(GameCategory category, Boolean available, Pageable pageable) {
+        log.info("Récupération des jeux catégorie = {} avec disponibilité = {}", category, available);
+        Page<Game> gamesPage = gameRepository.findByCategoryAndAvailable(category, available, pageable);
+        return gamesPage.map(gameMapper::gameToGameSummaryResponse);
+    }
+
 
     @Override
     public GameDetailResponse updateGame(Long id, GameUpdateRequest request) {

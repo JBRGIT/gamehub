@@ -39,9 +39,20 @@ public class GameController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<GameSummaryResponse>> getAllGames(@PageableDefault(size = 1, sort = {"title"}) Pageable pageable) {
+    public ResponseEntity<Page<GameSummaryResponse>> getAllGames(@PageableDefault(size = 1, sort = {"title"}) Pageable pageable, @RequestParam(required = false) GameCategory category, @RequestParam(required = false) Boolean available) {
         log.info("Requête GET reçue pour récupérer les jeux");
-        Page<GameSummaryResponse> page = gameService.getAllGames(pageable);
+        Page<GameSummaryResponse> page;
+        if (category == null && available == null) {
+            page = gameService.getAllGames(pageable);
+        } else if (category == null && available == true) {
+            page = gameService.getAvailableGames(pageable);
+        } else if (category == null && !available) {
+            page = gameService.getUnAvailableGames(pageable);
+        } else if (category != null && available == null) {
+            page = gameService.getGamesByCategory(category, pageable);
+        } else {
+            page = gameService.getByCategoryAndAvailable(category, available, pageable);
+        }
         return ResponseEntity.ok(page);
     }
 
