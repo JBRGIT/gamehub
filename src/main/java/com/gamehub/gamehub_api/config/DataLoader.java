@@ -29,20 +29,20 @@ public class DataLoader {
 
                 Game g1 = Game.builder()
                         .title("The Witcher 3")
-                        .description("Description du film")
+                        .description("RPG mythique")
                         .releaseDate(LocalDate.of(2023, 12, 30))
                         .price(BigDecimal.valueOf(39.99))
-                        .developer("jib")
-                        .publisher("azerty")
+                        .developer("CDPR")
+                        .publisher("CDPR")
                         .category(GameCategory.RPG)
                         .coverImageUrl("https://example.com/witcher.jpg")
                         .build();
 
                 Game g2 = Game.builder()
                         .title("FIFA 24")
-                        .description("Jeu de football ultra réaliste.")
+                        .description("Football réaliste")
                         .releaseDate(LocalDate.of(2023, 9, 29))
-                        .price(BigDecimal.valueOf(69.99))
+                        .price(BigDecimal.valueOf(69.99)) // prix max
                         .developer("EA Sports")
                         .publisher("Electronic Arts")
                         .category(GameCategory.SPORT)
@@ -50,10 +50,21 @@ public class DataLoader {
                         .build();
 
                 Game g3 = Game.builder()
+                        .title("NBA 2K24")
+                        .description("Basket ultra réaliste")
+                        .releaseDate(LocalDate.of(2023, 9, 20))
+                        .price(BigDecimal.valueOf(69.99)) // prix max aussi !
+                        .developer("2K")
+                        .publisher("2K")
+                        .category(GameCategory.SPORT)
+                        .coverImageUrl("https://example.com/nba.jpg")
+                        .build();
+
+                Game g4 = Game.builder()
                         .title("Minecraft")
-                        .description("Jeu sandbox basé sur la créativité et la survie.")
+                        .description("Créativité et survie")
                         .releaseDate(LocalDate.of(2011, 11, 18))
-                        .price(BigDecimal.valueOf(29.99))
+                        .price(BigDecimal.valueOf(19.99)) // prix min
                         .developer("Mojang")
                         .publisher("Mojang Studios")
                         .category(GameCategory.ADVENTURE)
@@ -61,27 +72,15 @@ public class DataLoader {
                         .available(false)
                         .build();
 
-                Game g4 = Game.builder()
-                        .title("Call of Duty: Modern Warfare 2")
-                        .description("FPS nerveux avec campagne et multijoueur.")
-                        .releaseDate(LocalDate.of(2022, 10, 28))
-                        .price(BigDecimal.valueOf(69.99))
-                        .developer("Infinity Ward")
-                        .publisher("Activision")
-                        .category(GameCategory.ACTION)
-                        .coverImageUrl("https://example.com/codmw2.jpg")
-                        .build();
-
                 Game g5 = Game.builder()
-                        .title("Civilization VI")
-                        .description("Jeu de stratégie au tour par tour.")
-                        .releaseDate(LocalDate.of(2016, 10, 21))
-                        .price(BigDecimal.valueOf(59.99))
-                        .developer("Firaxis Games")
-                        .publisher("2K Games")
-                        .category(GameCategory.STRATEGY)
-                        .coverImageUrl("https://example.com/civ6.jpg")
-                        .available(false)
+                        .title("Stardew Valley")
+                        .description("Farm RPG")
+                        .releaseDate(LocalDate.of(2016, 2, 26))
+                        .price(BigDecimal.valueOf(19.99)) // prix min aussi !
+                        .developer("ConcernedApe")
+                        .publisher("ConcernedApe")
+                        .category(GameCategory.RPG)
+                        .coverImageUrl("https://example.com/stardew.jpg")
                         .build();
 
                 gameRepository.save(g1);
@@ -90,7 +89,8 @@ public class DataLoader {
                 gameRepository.save(g4);
                 gameRepository.save(g5);
 
-                log.info("5 jeux ont été créés !");
+                log.info("5 jeux de test optimisés ont été créés !");
+
             }
         };
     }

@@ -2,8 +2,7 @@ package com.gamehub.gamehub_api.controller;
 
 import com.gamehub.gamehub_api.dto.request.GameCreateRequest;
 import com.gamehub.gamehub_api.dto.request.GameUpdateRequest;
-import com.gamehub.gamehub_api.dto.response.GameDetailResponse;
-import com.gamehub.gamehub_api.dto.response.GameSummaryResponse;
+import com.gamehub.gamehub_api.dto.response.*;
 import com.gamehub.gamehub_api.entity.GameCategory;
 import com.gamehub.gamehub_api.service.GameService;
 import jakarta.validation.Valid;
@@ -15,6 +14,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -76,4 +77,36 @@ public class GameController {
         gameService.markAsUnavailable(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/stats/count")
+    public ResponseEntity<List<CategoryCountResponse>> countGamesByCategory() {
+        return ResponseEntity.ok(gameService.countGamesByCategory());
+    }
+
+    @GetMapping("/stats/avg")
+    public ResponseEntity<List<CategoryAvgPriceResponse>> AvgPriceGamesByCategory() {
+        return ResponseEntity.ok(gameService.AvgPriceGamesByCategory());
+    }
+
+    @GetMapping("/stats/max")
+    public ResponseEntity<List<GameSummaryResponse>> mostExpensiveGame() {
+        return ResponseEntity.ok(gameService.mostExpensiveGame());
+    }
+
+    @GetMapping("/stats/min")
+    public ResponseEntity<List<GameSummaryResponse>> leastExpensiveGame() {
+        return ResponseEntity.ok(gameService.leastExpensiveGame());
+    }
+
+    @GetMapping("/stats/all")
+    public ResponseEntity<GameStatsResponse> getAllStatistiques() {
+        List<CategoryCountResponse> categoryCountResponses = gameService.countGamesByCategory();
+        List<CategoryAvgPriceResponse> categoryAvgPriceResponses = gameService.AvgPriceGamesByCategory();
+        List<GameSummaryResponse> mostExpensives = gameService.mostExpensiveGame();
+        List<GameSummaryResponse> lessExpensives = gameService.leastExpensiveGame();
+
+        GameStatsResponse gameStatsResponse = GameStatsResponse.builder().countByCategory(categoryCountResponses).avgPriceByCategory(categoryAvgPriceResponses).mostExpensive(mostExpensives).lessExpensive(lessExpensives).build();
+        return ResponseEntity.ok(gameStatsResponse);
+    }
+
 }

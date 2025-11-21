@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda92e41-0b19-481a-ae88-2490b2b52325" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/dto/response/CategoryAvgPriceResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/dto/response/CategoryCountResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/dto/response/GameStatsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/mapper/StatisticsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/config/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/config/DataLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/mapper/GameMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/mapper/GameMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/repository/GameRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/service/GameService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/service/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamehub/gamehub_api/service/GameServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/config/DataLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/config/DataLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/repository/GameRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/repository/GameRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/service/GameService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/service/GameService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/service/GameServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gamehub/gamehub_api/service/GameServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/gamehub/gamehub_api/mapper/GameMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/gamehub/gamehub_api/mapper/GameMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

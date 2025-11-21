@@ -2,11 +2,15 @@ package com.gamehub.gamehub_api.service;
 
 import com.gamehub.gamehub_api.dto.request.GameCreateRequest;
 import com.gamehub.gamehub_api.dto.request.GameUpdateRequest;
+import com.gamehub.gamehub_api.dto.response.CategoryAvgPriceResponse;
+import com.gamehub.gamehub_api.dto.response.CategoryCountResponse;
 import com.gamehub.gamehub_api.dto.response.GameDetailResponse;
 import com.gamehub.gamehub_api.dto.response.GameSummaryResponse;
 import com.gamehub.gamehub_api.entity.GameCategory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
+import java.util.List;
 
 
 public interface GameService {
@@ -20,4 +24,9 @@ public interface GameService {
     GameDetailResponse updateGame(Long id, GameUpdateRequest request);
     void deleteGame(Long id);
     void markAsUnavailable(Long id);
+    List<CategoryCountResponse> countGamesByCategory();
+    List<CategoryAvgPriceResponse> AvgPriceGamesByCategory();
+    List<GameSummaryResponse> mostExpensiveGame();
+    List<GameSummaryResponse> leastExpensiveGame();
+
 }

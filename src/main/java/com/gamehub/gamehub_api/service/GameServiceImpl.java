@@ -2,6 +2,8 @@ package com.gamehub.gamehub_api.service;
 
 import com.gamehub.gamehub_api.dto.request.GameCreateRequest;
 import com.gamehub.gamehub_api.dto.request.GameUpdateRequest;
+import com.gamehub.gamehub_api.dto.response.CategoryAvgPriceResponse;
+import com.gamehub.gamehub_api.dto.response.CategoryCountResponse;
 import com.gamehub.gamehub_api.dto.response.GameDetailResponse;
 import com.gamehub.gamehub_api.dto.response.GameSummaryResponse;
 import com.gamehub.gamehub_api.entity.Game;
@@ -9,6 +11,7 @@ import com.gamehub.gamehub_api.entity.GameCategory;
 import com.gamehub.gamehub_api.exception.GameAlreadyExistsException;
 import com.gamehub.gamehub_api.exception.GameNotFoundException;
 import com.gamehub.gamehub_api.mapper.GameMapper;
+import com.gamehub.gamehub_api.mapper.StatisticsMapper;
 import com.gamehub.gamehub_api.repository.GameRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,8 +20,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -27,6 +30,7 @@ import java.util.List;
 public class GameServiceImpl implements GameService {
     private final GameRepository gameRepository;
     private final GameMapper gameMapper;
+    private final StatisticsMapper statisticsMapper;
 
     @Override
     public GameDetailResponse createGame(GameCreateRequest gameCreateRequest) {
@@ -125,4 +129,30 @@ public class GameServiceImpl implements GameService {
         gameRepository.save(game);
         log.info("Jeu marqué comme indisponible : {} (ID : {})", game.getTitle(), id);
     }
+
+    @Override
+    public List<CategoryCountResponse> countGamesByCategory() {
+        List<Object[]> objects = gameRepository.countGamesByCategory();
+        return objects.stream().map(statisticsMapper::objectToCategoryCountResponse).toList();
+    }
+
+
+    @Override
+    public List<CategoryAvgPriceResponse> AvgPriceGamesByCategory() {
+        List<Object[]> objects = gameRepository.avgPriceGamesByCategory();
+        return objects.stream().map(statisticsMapper::objectToCategoryAvgPriceResponse).toList();
+    }
+
+    @Override
+    public List<GameSummaryResponse> mostExpensiveGame() {
+        List<Game> games = gameRepository.findMostExpensiveGame();
+        return games.stream().map(gameMapper::gameToGameSummaryResponse).toList();
+    }
+
+    @Override
+    public List<GameSummaryResponse> leastExpensiveGame() {
+        List<Game> games = gameRepository.findLeastExpensiveGame();
+        return games.stream().map(gameMapper::gameToGameSummaryResponse).toList();
+    }
+
 }

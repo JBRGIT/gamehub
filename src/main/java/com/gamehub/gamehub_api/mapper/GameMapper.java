@@ -2,6 +2,8 @@ package com.gamehub.gamehub_api.mapper;
 
 import com.gamehub.gamehub_api.dto.request.GameCreateRequest;
 import com.gamehub.gamehub_api.dto.request.GameUpdateRequest;
+import com.gamehub.gamehub_api.dto.response.CategoryAvgPriceResponse;
+import com.gamehub.gamehub_api.dto.response.CategoryCountResponse;
 import com.gamehub.gamehub_api.dto.response.GameDetailResponse;
 import com.gamehub.gamehub_api.dto.response.GameSummaryResponse;
 import com.gamehub.gamehub_api.entity.Game;
@@ -21,4 +23,5 @@ public interface GameMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = IGNORE)
     void gameUpdateRequestToGame(GameUpdateRequest request, @MappingTarget Game game);
+
 }
