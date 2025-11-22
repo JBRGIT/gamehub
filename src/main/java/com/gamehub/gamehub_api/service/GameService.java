@@ -28,5 +28,6 @@ public interface GameService {
     List<CategoryAvgPriceResponse> AvgPriceGamesByCategory();
     List<GameSummaryResponse> mostExpensiveGame();
     List<GameSummaryResponse> leastExpensiveGame();
+    List<GameSummaryResponse> searchGamesByTitle(String query);
 
 }

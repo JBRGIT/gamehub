@@ -109,4 +109,11 @@ public class GameController {
         return ResponseEntity.ok(gameStatsResponse);
     }
 
+
+    @GetMapping("/search")
+    public ResponseEntity<List<GameSummaryResponse>> searchGamesByTitle(@RequestParam String query) {
+        return ResponseEntity.ok(gameService.searchGamesByTitle(query));
+    }
+
+
 }

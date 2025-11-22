@@ -21,6 +21,8 @@ public interface GameRepository extends JpaRepository<Game, Long> {
 
     Page<Game> findByCategoryAndAvailable(GameCategory category,Boolean available, Pageable pageable);
 
+    List<Game> findByTitleContainingIgnoreCase(String query);
+
     @Query("SELECT g.category, COUNT(g) FROM Game g GROUP BY g.category")
     List<Object[]> countGamesByCategory();
     @Query("SELECT g.category, AVG(g.price) FROM Game g GROUP BY g.category")

@@ -155,4 +155,10 @@ public class GameServiceImpl implements GameService {
         return games.stream().map(gameMapper::gameToGameSummaryResponse).toList();
     }
 
+    @Override
+    public List<GameSummaryResponse> searchGamesByTitle(String query) {
+        List<Game> games = gameRepository.findByTitleContainingIgnoreCase(query);
+        return games.stream().map(gameMapper::gameToGameSummaryResponse).toList();
+    }
+
 }
